@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOOMSLAYER TOY SHOP</title>
+    <script defer src="app.js"></script>
+</head>
+<body>
+    <header class="title">
+        <h1>DOOMSLAYER toy shoppe</h1>
+    </header>
+    <section id="create-toy-section">
+        <form method="post" action="http://localhost:9000/toys/" >
+            <input name="name" placeholder="name" type="text">
+            <input name="color" placeholder="color" type="text">
+            <input name="price" placeholder="price" type="number">
+            <select name="sound_id" id="sound-options-form">
+            </select>
+            <input type="submit">
+        </form>
+    </section>
+    <section>
+        <h1>Select a Sound to filter by</h1>
+        <form action="http://localhost:3000">
+            <select name="soundID" id="sound-options-filter">
+            </select>
+            <input type="submit">
+        </form>
+    </section>
+    <section id="list-toy-section">
+    
+    </section>
+</body>
+</html>
