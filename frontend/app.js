@@ -4,12 +4,18 @@ const backendBaseURL = "http://localhost:9000/"
 
 const queryString = window.location.search
 const queryParams = new URLSearchParams( queryString )
-const soundID = queryParams.get('soundID') ? queryParams.get('soundID') : ''
-console.log(soundID)
+let queryParamsSoundID
+if( queryParams.get('soundID') ){
+    queryParamsSoundID = "?sound_id=" + queryParams.get('soundID')
+} else {
+    queryParamsSoundID = ""
+}
 
-fetch(backendBaseURL + 'toys' + `?sound_id=${soundID}`)
+
+fetch(backendBaseURL + 'toys' + queryParamsSoundID)
     .then( response => response.json())
     .then( toys =>  toys.forEach(toy => {
+
         const $listToySection = document.querySelector('#list-toy-section')
         //create
         const $toyName =  document.createElement('h3')
